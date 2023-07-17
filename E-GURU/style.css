@@ -13,6 +13,13 @@ Reset CSS
 body {
   font-family: "Poppins", sans-serif;
 }
+/* ================
+Customize
+=================== */
+:root {
+  --primary-color: #ff4500;
+  --secondary-color: #ffffff;
+}
 /*====================== 
 Utility
  ========================*/
@@ -22,6 +29,20 @@ Utility
 .container {
   margin-right: auto;
   margin-left: auto;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 1.8rem;
+}
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: black;
+  font-weight: 500;
+  margin-left: 5rem;
+  padding: 0.8rem 1.8rem;
 }
 /*====================== 
 Media query
@@ -85,7 +106,63 @@ Header navbar
 }
 #navSignBtn {
   padding: 0.5rem 1.5rem;
-  font-weight: 500;
   background-color: #fff;
   display: none;
+}
+/* =================
+HomeSection
+==================== */
+.HomeSection {
+  margin-top: 1rem;
+  padding: 0px 2rem;
+}
+.HsmainHed {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.Hspara {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  border-left: 1px solid black;
+}
+.Hsstart {
+  flex-direction: column;
+}
+.mainImageCont {
+  position: relative;
+  margin-top: 3rem;
+}
+.orangeMain {
+  width: 100%;
+  z-index: 3;
+}
+
+.patternMain {
+  width: 100%;
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  z-index: 2;
+}
+.menMain {
+  position: absolute;
+  top: 0rem;
+  left: 4rem;
+  width: 68%;
+  z-index: 1;
+}
+.orangeArrowMain {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.circleMain {
+  position: absolute;
+  right: 0;
+  bottom: 12rem;
+  width: 1rem;
+}
+.btnMainCont {
+  margin-top: 2rem;
 }
