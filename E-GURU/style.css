@@ -35,47 +35,16 @@ Utility
   background-color: var(--primary-color);
   color: white;
   border: none;
-  padding: 1rem 1.8rem;
+  padding: 0.8rem 1.5rem;
 }
 .btn-secondary {
   background-color: var(--secondary-color);
   color: black;
   font-weight: 500;
   margin-left: 5rem;
-  padding: 0.8rem 1.8rem;
-}
-/*====================== 
-Media query
- ========================*/
-@media screen and (min-width: 640px) {
-  .navMenu {
-    display: none;
-  }
-  .container {
-    max-width: 1182px;
-  }
-  .navUser {
-    display: none;
-  }
-  #navSignBtn {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .navbar {
-    padding-top: 1.5rem;
-  }
+  padding: 0.8rem 1.5rem;
 }
 
-@media screen and (min-width: 1024px) {
-  #navUlDiv {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-}
-@media screen and (min-width: 1563px) {
-}
 /*====================== 
 Header navbar
  ========================*/
@@ -126,23 +95,21 @@ HomeSection
   padding: 0 1rem;
   border-left: 1px solid black;
 }
-.Hsstart {
-  flex-direction: column;
-}
+
 .mainImageCont {
   position: relative;
   margin-top: 3rem;
 }
 .orangeMain {
   width: 100%;
-  z-index: 3;
+  z-index: 8;
 }
 
 .patternMain {
   width: 100%;
   position: absolute;
-  top: -1rem;
-  left: 1rem;
+  top: -0.5rem;
+  left: 0.5rem;
   z-index: 2;
 }
 .menMain {
@@ -155,14 +122,162 @@ HomeSection
 .orangeArrowMain {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -1rem;
 }
 .circleMain {
   position: absolute;
   right: 0;
-  bottom: 12rem;
+  bottom: 4rem;
   width: 1rem;
+}
+.curveMain {
+  position: absolute;
+  right: 0;
+  width: 35%;
+}
+.greenMain {
+  position: absolute;
+  left: 0;
+  bottom: 4rem;
 }
 .btnMainCont {
   margin-top: 2rem;
+  width: 100%;
+  margin-left: 2rem;
+}
+.btnMainFirstBtn {
+  display: none;
+}
+/* ===========
+Footer
+============== */
+.footCont {
+  background-color: rgb(50, 50, 113);
+  margin-top: 10rem;
+  color: white;
+  padding: 1rem 5rem;
+  text-align: center;
+}
+.footFirst {
+}
+.footSecond {
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footSecond > * {
+  margin-top: 0.5rem;
+}
+.footFirst > * {
+  margin-top: 0.5rem;
+}
+
+.footSecondImg {
+  text-align: center;
+  background-color: rgba(71, 208, 247, 0.82);
+  width: 4rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.footThirdImg {
+  text-align: center;
+  background-color: rgba(236, 54, 18, 0.82);
+  width: 4rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.footFourthImg {
+  text-align: center;
+  background-color: rgba(63, 52, 214, 0.82);
+  width: 4rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+/*====================== 
+Media query
+ ========================*/
+@media screen and (min-width: 640px) {
+  .container {
+    max-width: 1182px;
+  }
+  .navUser {
+    display: none;
+  }
+  #navSignBtn {
+    display: block;
+  }
+  .Hsstart {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .btnMainCont {
+    display: none;
+  }
+  .HsfirstCont {
+    width: 40rem;
+  }
+  .btnMainFirstBtn {
+    display: block;
+    margin-top: 2rem;
+  }
+  .HsmainHed span {
+    font-size: 3rem;
+  }
+  .Hspara {
+    font-size: 1.5rem;
+  }
+  .curveMain {
+    bottom: -5rem;
+    left: 0;
+    width: 25%;
+  }
+  .circleMain {
+    bottom: 0rem;
+    right: -1rem;
+  }
+  .greenMain {
+    bottom: -5rem;
+  }
+  .footCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #navUlDiv {
+    display: inline-block;
+  }
+  .navMenu {
+    display: none;
+  }
+  .HsmainHed span {
+    font-size: 3rem;
+  }
+  .Hspara {
+    font-size: 1.5rem;
+  }
+  .curveMain {
+    bottom: 0rem;
+    left: -10rem;
+    width: 35%;
+  }
+}
+@media screen and (min-width: 1280px) {
+}
+@media screen and (min-width: 1563px) {
 }
