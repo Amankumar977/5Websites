@@ -3,10 +3,466 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Epix Lab</title>
     <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
   </head>
-  <body>
-    <img src="" alt="" />
+  <body class="xl:px-[6rem] font-mono">
+    <header>
+      <nav class="container mx-auto my-0">
+        <div class="flex justify-between items-center px-2 py-2">
+          <div>
+            <img
+              src="../assets/Logo.png"
+              alt="Epixlab logo"
+              class="w-16 sm:w-20 md:w-24 lg:w-44" />
+          </div>
+          <div class="sm:hidden">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="hidden sm:block">
+            <ul class="flex gap-5 lg:gap-7 xl:gap-14 md:text-xl">
+              <li class="cursor-pointer">Home</li>
+              <li class="cursor-pointer">About us</li>
+              <li class="cursor-pointer">Our App</li>
+              <li class="cursor-pointer">Contacts</li>
+            </ul>
+          </div>
+          <div class="space-x-4 md:text-xl hidden sm:block">
+            <button>Log in</button>
+            <button class="btn px-4 py-2">Sign up</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Nav end -->
+      <!-- Header content start -->
+      <div
+        class="md:flex md:justify-between md:items-center text-center md:text-left container mx-auto my-0 px-4 md:mt-24">
+        <!-- first part -->
+        <div class="space-y-6 md:w-1/2 lg:w-1/3">
+          <h1 class="text-4xl font-extrabold xl:text-5xl">
+            We boost <br />
+            growth for your <br />
+            Startup buisness
+          </h1>
+          <article class="font-semibold">
+            <p>
+              Our goal is top at the heart of creativity services industry as a
+              digital creator, In has a after coomment
+            </p>
+          </article>
+          <div class="flex gap-5">
+            <button class="btn px-4 py-2">Get started</button>
+            <div class="flex gap-2 items-center">
+              <div
+                class="text-xl bg-[#5F6064] w-10 h-10 rounded-full flex justify-center items-center text-white">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div>Learn More</div>
+            </div>
+          </div>
+        </div>
+        <!-- second part -->
+        <div
+          class="relative w-full flex justify-center items-center mt-44 md:mt-0 md:w-1/2 lg:2/3">
+          <div
+            class="bg-white md:w-[19rem] md:h-[19rem] w-[14rem] lg:w-[26rem] lg:h-[26rem] rounded-full border border-gray-200 shadow-lg shadow-gray-300 z-20 absolute md:-top-24 mt-10 ml-12 lg:-top-44 xl:w-[32rem] xl:h-[32rem]">
+            <img
+              src="../assets/joyful-guy-texting-message-smartphone2 1.png"
+              alt="Epixlab Customers"
+              class="z-20" />
+          </div>
+          <div
+            class="absolute md:-top-28 md:-left-24 w-[22rem] md:w-[26rem] md:mt-7 md:ml-16 z-10 lg:w-[35rem] xl:w-[50rem] lg:-top-48 lg:-left-32 xl:-top-56">
+            <img src="../assets/Group 10.png" alt="EpixLab Assets" />
+          </div>
+
+          <div
+            class="hidden md:flex justify-start items-center p-1 gap-4 border border-gray-300 w-[20rem] md:-translate-x-[4rem] xl:-translate-x-[17rem] lg:-translate-x-[10rem] z-0 xl:-top-28 lg:-top-28 absolute">
+            <div>
+              <img
+                src="../assets/graphic design.png"
+                alt="EpixLab Graphic design"
+                class="w-10" />
+            </div>
+            <div>
+              <h1 class="font-bold">100% Business Growth</h1>
+              <div class="font-bold">
+                &#11088; 4.9
+                <span class="font-normal text-[#B5B4B7]">(1520 Reviews)</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="justify-start items-center gap-4 border border-gray-300 w-[12rem] absolute hidden md:flex md:mt-[25rem] md:-translate-x-[4rem] xl:-translate-x-[20rem] lg:-translate-x-[10rem]">
+            <div>
+              <h1>100,000 Happy clients</h1>
+              <div>
+                &#11088; 4.9
+                <span class="font-normal text-[#B5B4B7]">(15k Reviews)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Vision section -->
+      <section class="container mx-auto my-0 mt-[20rem]">
+        <div>
+          <div
+            class="text-center flex justify-center items-center flex-col gap-5">
+            <h3 class="tracking-[6px] xl:tracking-[8px]">SERVICE</h3>
+            <span
+              class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              Our Vision & our Goals
+            </span>
+          </div>
+          <div
+            class="sm:flex sm:justify-between sm:items-center sm:flex-wrap pt-8 sm:mt-0">
+            <div
+              class="flex flex-col justify-center items-center gap-8 px-12 border border-[#f0efef] w-[18rem] lg:w-[20rem] rounded-xl shadow-lg shadow-gray-300 mx-12 xl:mx-0 pt-6">
+              <img
+                src="../assets/graphic design.png"
+                alt="Graphic design"
+                class="" />
+              <span class="md:text-2xl font-extrabold"> Graphic Design </span>
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Molestias earum voluptas error enim qui illum. Ipsa repellat
+                  autem nisi et!
+                </p>
+              </article>
+              <button class="btn px-4 py-1 lg:px-6 lg:py-2 mb-8">
+                Learn more
+              </button>
+            </div>
+            <div
+              class="flex flex-col justify-center items-center gap-8 px-12 border border-[#f0efef] w-[18rem] lg:w-[20rem] rounded-xl shadow-lg shadow-gray-300 mx-12 xl:mx-0 pt-6">
+              <img
+                src="../assets/Video edit.png"
+                alt="Graphic design"
+                class="w-36" />
+              <span class="md:text-2xl font-extrabold"> Video Editing </span>
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Molestias earum voluptas error enim qui illum. Ipsa repellat
+                  autem nisi et!
+                </p>
+              </article>
+              <button class="btn px-4 py-1 lg:px-6 lg:py-2 mb-8">
+                Learn more
+              </button>
+            </div>
+            <div
+              class="flex flex-col justify-center items-center gap-8 px-12 border border-[#f0efef] w-[18rem] lg:w-[20rem] rounded-xl shadow-lg shadow-gray-300 mx-12 pt-6">
+              <img
+                src="../assets/Digital market.png"
+                alt="Graphic design"
+                class="" />
+              <span class="md:text-2xl font-extrabold">
+                Digital marketing
+              </span>
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Molestias earum voluptas error enim qui illum. Ipsa repellat
+                  autem nisi et!
+                </p>
+              </article>
+              <button class="btn px-4 py-1 lg:px-6 lg:py-2 mb-8">
+                Learn more
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Video section -->
+      <section class="container mx-auto my-0 pt-14">
+        <div
+          class="md:flex md:justify-between md:items-center px-8 md:gap-16 xl:gap-36">
+          <div class="md:w-1/4">
+            <h3 class="text-2xl font-bold mb-4 text-[#837BA9]">
+              Many Blocks and Components
+            </h3>
+            <article class="text-[#BBBBC6] mb-8 sm:mb-16">
+              <p>
+                Startup Framework conatins components and complex blocks which
+                can easily be integrated into almoct any design.
+              </p>
+            </article>
+            <div>
+              <button class="px-4 py-1 rounded-full border">Explore</button>
+            </div>
+          </div>
+          <div class="mt-16 md:w-3/4">
+            <img
+              src="../assets/Video Player.png"
+              alt="EpixLab team video"
+              class="w-full cursor-pointer" />
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials section -->
+      <section class="container mx-auto my-0">
+        <div class="my-8 sm:py-16 px-8 text-center">
+          <div>
+            <h1 class="tracking-[6px] text-[#949398]">Testimonials</h1>
+            <span
+              class="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+              >what Clients say about us
+            </span>
+          </div>
+          <!-- Top -->
+          <div class="sm:flex sm:flex-col sm:gap-20 px-8 mt-8 sm:px-0 sm:mt-20">
+            <!--  -->
+            <div class="sm:flex sm:justify-evenly gap-4">
+              <div class="flex gap-9">
+                <div>
+                  <img
+                    src="../assets/Mask (1).png"
+                    alt="E clients"
+                    class="w-full" />
+                </div>
+                <div class="text-left sm:w-[15rem] w-[10rem]">
+                  <article class="mb-10">
+                    <p>
+                      As a Business targeting high net worth individuals, we
+                      were looking for a slick, cool and mini-malistic design
+                      for our website.
+                    </p>
+                  </article>
+                  <span class="text-[#D3D7DB]">KayLey Frame</span>
+                </div>
+              </div>
+              <div class="flex gap-9 mt-8 sm:mt-0">
+                <div>
+                  <img
+                    src="../assets/Mask.png"
+                    alt="E clients"
+                    class="w-full" />
+                </div>
+                <div class="text-left sm:w-[15rem] w-[10rem]">
+                  <article class="mb-10">
+                    <p>
+                      Get a fully retina ready site when you build with startup
+                      Framework. Websites look sharper and more gorgeouss on
+                      devices with retina display support
+                    </p>
+                  </article>
+                  <span class="text-[#D3D7DB]">RAYHAN CURRAN</span>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="sm:flex sm:justify-evenly gap-4">
+              <div class="flex gap-9">
+                <div>
+                  <img
+                    src="../assets/Mask (2).png"
+                    alt="E clients"
+                    class="w-full" />
+                </div>
+                <div class="text-left sm:w-[15rem] w-[10rem]">
+                  <article class="mb-10">
+                    <p>
+                      The most important part of the Startup Framwwork is the
+                      samples
+                    </p>
+                  </article>
+                  <span class="text-[#D3D7DB]">GENE WHIITEFIELD</span>
+                </div>
+              </div>
+              <div class="flex gap-9 mt-8 sm:mt-0">
+                <div>
+                  <img
+                    src="../assets/Userpic.png"
+                    alt="E clients"
+                    class="w-full" />
+                </div>
+                <div class="text-left sm:w-[15rem] w-[10rem]">
+                  <article class="mb-10">
+                    <p>
+                      I've built website witth startup in just one day, annd it
+                      was ready-to-go.
+                    </p>
+                  </article>
+                  <span class="text-[#D3D7DB]">ALLAN KHAN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Team section -->
+      <section class="container mx-auto my-0">
+        <div class="my-10 sm:py-16 px-8 text-center">
+          <div>
+            <h1 class="tracking-[6px] text-[#949398]">OUR TEAM</h1>
+            <span
+              class="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+              >Meet The Team
+            </span>
+          </div>
+          <div class="md:flex md:gap-8 md:justify-evenly mt-10">
+            <!-- First box -->
+            <div
+              class="border hover:shadow-md hover:shadow-gray-300 rounded-lg mt-8 md:w-1/3">
+              <!-- First Inner div -->
+              <div class="flex justify-center items-center flex-col py-12">
+                <img src="../assets/Mask (3).png" alt="EpixLab Team" />
+                <span class="mt-4 text-[#6747e8] text-2xl lg:text-3xl"
+                  >Vanessa Laird</span
+                >
+                <span class="mt-4 text-[#C3C3CC]">UI DESIGNER</span>
+              </div>
+              <!-- Second Inner div -->
+              <div
+                class="flex justify-evenly items-center border text-[#C3C3CC]">
+                <div class="border-r border-gray-300 pr-12 text-[#C3C3CC]">
+                  <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="border-r border-gray-300 pr-12 text-[#C3C3CC]">
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div>
+                  <i class="fa-brands fa-twitch"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Second box -->
+            <div
+              class="border hover:shadow-md hover:shadow-gray-300 rounded-lg mt-8 md:w-1/3">
+              <!-- First Inner div -->
+              <div class="flex justify-center items-center flex-col py-12">
+                <img src="../assets/Userpic (1).png" alt="EpixLab Team" />
+                <span class="mt-4 text-[#5837db] text-2xl lg:text-3xl"
+                  >Mason Campbell</span
+                >
+                <span class="mt-4 text-[#C3C3CC]">UI DESIGNER</span>
+              </div>
+              <!-- Second Inner div -->
+              <div
+                class="flex justify-evenly items-center border text-[#C3C3CC]">
+                <div class="border-r border-gray-300 pr-12 text-[#C3C3CC]">
+                  <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="border-r border-gray-300 pr-12 text-[#C3C3CC]">
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div>
+                  <i class="fa-brands fa-twitch"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Third box -->
+            <div
+              class="border hover:shadow-md hover:shadow-gray-300 rounded-lg mt-8 md:w-1/3">
+              <!-- First Inner div -->
+              <div class="flex justify-center items-center flex-col py-12">
+                <img src="../assets/Userpic (2).png" alt="EpixLab Team" />
+                <span class="mt-4 text-[#785beb] text-2xl lg:text-3xl"
+                  >Irea Evans</span
+                >
+                <span class="mt-4 text-[#C3C3CC]">CLIENT MANAGER</span>
+              </div>
+              <!-- Second Inner div -->
+              <div
+                class="flex justify-evenly items-center border text-[#C3C3CC]">
+                <div class="border-r border-gray-300 pr-12 text-[#C3C3CC]">
+                  <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="border-r border-gray-300 pr-12 text-[#C3C3CC]">
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div>
+                  <i class="fa-brands fa-twitch"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- News Letters -->
+      <section>
+        <div class="my-8 sm:py-16 px-8 text-center">
+          <div>
+            <h1 class="tracking-[6px] text-[#949398]">News Letters</h1>
+            <span
+              class="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+              >Subscribe Our Newsletter
+            </span>
+          </div>
+          <div class="mt-16 sm:flex gap-8 sm:justify-between sm:items-center">
+            <div class="sm:w-2/6">
+              <img src="../assets/Frame.png" alt="Subsribeto Newsletter" />
+            </div>
+            <div class="sm:w-4/6">
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  provident aut rerum exercitationem natus maxime ipsa minima
+                  eum odio. Ipsum.
+                </p>
+              </article>
+              <div class="border rounded-full mt-6">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="px-8 py-2 border-none outline-none sm:text-2xl text-black placeholder:text-black"
+                  placeholder="Your E-mail Here...." />
+              </div>
+              <button class="btn w-full mt-4 py-2">
+                Subscribe our Newsletter
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container mx-auto my-0">
+        <div
+          class="px-6 text-[#2F216E] md:flex md:gap-6 md:justify-between md:items-center">
+          <div class="lg:flex lg:gap-8">
+            <img
+              src="../assets/Logo.png"
+              alt="EpixLab Logo"
+              class="mt-6 sm:w-24 lg:w-20" />
+            <div class="mt-6 sm:col-span-6">
+              <i class="fa-regular fa-copyright"></i> 2020 Epixlab. All rights
+              reserved.
+            </div>
+          </div>
+          <div class="mt-6">
+            <ul class="flex gap-2 sm:gap-10">
+              <li class="cursor-pointer">Portfolio</li>
+              <li class="cursor-pointer">How it works</li>
+              <li class="cursor-pointer">Pricing</li>
+              <li class="cursor-pointer">About</li>
+              <li class="cursor-pointer">login</li>
+            </ul>
+          </div>
+        </div>
+        <div class="px-8 sm:px-16 mt-10">
+          <div class="bg-gray-300 h-[2px]"></div>
+          <div>
+            <p class="text-[#CDCDD4]">
+              Startup Framework contains components and complex blocks which can
+              easily be integrated into almost any design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
