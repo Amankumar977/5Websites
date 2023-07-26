@@ -1,0 +1,7 @@
+.navImg {
+  width: 9rem;
+}
+.nav-pur-btn {
+  background-image: linear-gradient(to right, #0f9ccf, #1677a7 50%, #0f9ccf);
+  color: white;
+}
