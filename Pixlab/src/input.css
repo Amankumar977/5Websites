@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
 .btn {
-  @apply text-white bg-[#FF6600] border-none rounded-md;
+  @apply text-white bg-[#FF6601] border-none rounded-md;
 }
 @tailwind utilities;
