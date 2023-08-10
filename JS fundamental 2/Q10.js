@@ -1,19 +1,20 @@
-const sentence =
-  "please please submit your assignment on time, your assigmnets are important";
+const sentences =
+  "Please Please submit your assignment on time it is very important";
 
-function wordCounter(sentence) {
-  const words = sentence.toLowerCase().split(" ");
-  const wordOccurrences = {};
+function wordCounter(sentences) {
+  const word = sentences.toLowerCase().split(" ");
+  const wordOccurence = {};
 
-  words.forEach((word) => {
-    if (word in wordOccurrences) {
-      wordOccurrences[word]++;
+  word.forEach((word) => {
+    if (word in wordOccurence) {
+      wordOccurence[word]++;
     } else {
-      wordOccurrences[word] = 1;
+      wordOccurence[word] = 1;
     }
   });
-  return wordOccurrences;
+  return wordOccurence;
 }
 
-const result = wordCounter(sentence);
+const result = wordCounter(sentences);
+
 console.log(result);
