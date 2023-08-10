@@ -2,11 +2,17 @@ const sentence =
   "please please submit your assignment on time, your assigmnets are important";
 
 function wordCounter(sentence) {
-  Array.from(sentence).map((word) => {
-    if (word === word + 1) {
-      return word;
+  const words = sentence.toLowerCase().split(" ");
+  const wordOccurrences = {};
+
+  words.forEach((word) => {
+    if (word in wordOccurrences) {
+      wordOccurrences[word]++;
+    } else {
+      wordOccurrences[word] = 1;
     }
   });
+  return wordOccurrences;
 }
 
 const result = wordCounter(sentence);
