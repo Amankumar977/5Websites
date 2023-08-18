@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Image</title>
+  </head>
+  <body>
+    <h1>Update profile Picture</h1>
+    <form action="#">
+      <input type="file" name="profileImage" id="inputFile" />
+      <p style="font-weight: 600">Your Profile Picture</p>
+      <img alt="No profile picture" id="profileImage" />
+    </form>
+    <script>
+      let inputFile = document.getElementById("inputFile");
+      let profileImage = document.getElementById("profileImage");
+
+      inputFile.addEventListener("change", function (event) {
+        const selectedImage = event.target.files[0];
+
+        if (selectedImage) {
+          let imageUrl = URL.createObjectURL(selectedImage);
+          profileImage.src = imageUrl;
+        }
+      });
+    </script>
+  </body>
+</html>
