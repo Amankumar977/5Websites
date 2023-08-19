@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <button id="loginBtn">Login</button>
+    <button id="logoutBtn">Logout</button>
+    <h1 id="userText">User Has Not logged in</h1>
+    <script>
+      let loginBtn = document.getElementById("loginBtn");
+      let logoutBtn = document.getElementById("logoutBtn");
+      let userText = document.getElementById("userText");
+      let isLoggedIn = false;
+      loginBtn.addEventListener("click", function () {
+        if (!isLoggedIn) {
+          userText.innerHTML = "User has logged In.";
+          localStorage.setItem("isLoggedIn", "true");
+        }
+        isLoggedIn = !isLoggedIn;
+      });
+      logoutBtn.addEventListener("click", function () {
+        if (isLoggedIn) {
+          userText.innerHTML = "User has Not logged In.";
+          localStorage.removeItem("isLoggedIn");
+        }
+        isLoggedIn = !isLoggedIn;
+      });
+    </script>
+  </body>
+</html>

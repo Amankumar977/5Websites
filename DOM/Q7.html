@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="text" id="text" placeholder="Search for items" />
+    <h3>Results:</h3>
+    <ul id="resultUl">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Tailwind CSS</li>
+      <li>GitHub</li>
+      <li>JavaScript</li>
+    </ul>
+    <script>
+      let text = document.getElementById("text");
+      let resultUl = document.getElementById("resultUl");
+      let resultArr = ["HTML", "CSS", "Tailwind CSS", "Github", "JavaScript"];
+      text.addEventListener("input", function (event) {
+        const searchTerm = this.value.toLowerCase();
+        const filteredItems = resultArr.filter((item) =>
+          item.toLowerCase().includes(searchTerm)
+        );
+        resultUl.innerHTML = "";
+        filteredItems.forEach((items) => {
+          let newLi = document.createElement("li");
+          newLi.textContent = items;
+          resultUl.appendChild(newLi);
+        });
+      });
+    </script>
+  </body>
+</html>

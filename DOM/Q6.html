@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Down</title>
+  </head>
+  <body>
+    <span style="font-weight: 900; font-size: 25px"
+      >Which is favorite Programming:
+    </span>
+    <select name="language" id="language">
+      <option value="SelectLan">Select The languge</option>
+    </select>
+    <script>
+      let selecTElement = document.getElementById("language");
+      let optionsArr = ["JavaScript", "Java", "Phython", "C++"];
+
+      for (let i = 0; i < optionsArr.length; i++) {
+        let option = document.createElement("option");
+        option.value = optionsArr[i];
+        option.innerHTML = optionsArr[i];
+        selecTElement.appendChild(option);
+      }
+    </script>
+  </body>
+</html>

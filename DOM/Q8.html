@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      background-color: #121050;
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    ">
+    <p
+      id="clock"
+      style="
+        border: 1px solid white;
+        color: white;
+        border-radius: 8px;
+        font-size: 40px;
+        padding: 5px;
+      "></p>
+  </body>
+  <script>
+    function updateClock() {
+      let time = new Date();
+      let hour = time.getHours();
+      const ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12 || 12;
+      let minute = time.getMinutes().toString().padStart(2, "0");
+      let second = time.getSeconds().toString().padStart(2, "0");
+      let timeString = `${hour}:${minute}:${second} ${ampm}`;
+      document.getElementById("clock").textContent = timeString;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</html>

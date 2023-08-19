@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form Validation</title>
+  </head>
+  <body style="display: grid; place-items: center">
+    <h1 style="padding-top: 5rem">Sign up Form</h1>
+    <form action="#">
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="(Minimum 3 charcters)" />
+      </div>
+      <br />
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your Email" />
+      </div>
+      <br />
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="(Minimum 8 characters)" />
+      </div>
+      <br />
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+    <script>
+      let nameOfUser = document.getElementById("name");
+      let password = document.getElementById("password");
+      let submit = document.getElementById("submit");
+      let nameValue = "";
+      let passValue = "";
+      nameOfUser.addEventListener("input", function () {
+        nameValue = this.value;
+      });
+      password.addEventListener("input", function () {
+        passValue = this.value;
+      });
+      submit.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (nameValue.length >= 3 && passValue.length >= 8) {
+          alert("Form Validation successful");
+        } else {
+          alert("Form Validation failed");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="imageText">Your Image is visible.</h1>
+    <button id="toggleBtn">Toggle Image</button>
+    <img src="../Bike/assets/footer scooter.png" alt="" id="toggleImg" />
+
+    <script>
+      let imageText = document.getElementById("imageText");
+      let toggleBtn = document.getElementById("toggleBtn");
+      let toggleImg = document.getElementById("toggleImg");
+
+      let isToggled = false;
+      toggleBtn.addEventListener("click", function () {
+        if (isToggled) {
+          imageText.innerHTML = "Your Image is visible.";
+          toggleImg.style.display = "block";
+        } else {
+          imageText.innerHTML = "Your Image is hidden.";
+          toggleImg.style.display = "none";
+        }
+        isToggled = !isToggled;
+      });
+    </script>
+  </body>
+</html>
