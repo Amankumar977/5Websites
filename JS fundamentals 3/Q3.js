@@ -1,7 +1,7 @@
 let emp = {
   name: "aman",
   salary: "40,000",
-  designation: "web developer",
+  designation: "web developers",
 };
 
 function countKeys(emp) {
