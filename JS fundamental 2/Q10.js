@@ -5,8 +5,8 @@ function wordCounter(sentences) {
   const word = sentences.toLowerCase().split(" ");
   const wordOccurence = {};
 
-  word.forEach((word) => {
-    if (word in wordOccurence) {
+  word.map((word) => {
+    if (wordOccurence[word]) {
       wordOccurence[word]++;
     } else {
       wordOccurence[word] = 1;
