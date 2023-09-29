@@ -46,7 +46,7 @@ const circle = new Circle(5);
 const rectangle = new Rectangle(4, 6);
 const traingle = new Traingle(8, 6, 5, 7, 10);
 const shapes = new Shapes();
-console.log(`Circle :`);
+console.log(`Circle:`);
 shapes.poly(circle);
 console.log(`Rectangle :`);
 shapes.poly(rectangle);
