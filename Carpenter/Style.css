@@ -389,7 +389,7 @@ Media
 ============ */
 @media screen and (min-width: 640px) {
   .container {
-    max-width: 1182px;
+    max-width: 1181px;
     margin: 0px auto;
   }
   .navBars {
