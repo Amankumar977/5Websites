@@ -1,14 +1,13 @@
 let x = BigInt(7985);
-let map = new Map();
+
 let fib = (x) => {
-  if (x <= 1n) {
-    return x;
+  let first = BigInt(0);
+  let second = BigInt(1);
+  for (let i = BigInt(2); i <= x; i++) {
+    let third = first + second;
+    first = second;
+    second = third;
   }
-  if (map.has(x)) {
-    return map.get(x);
-  }
-  let fibVal = fib(x - 1n) + fib(x - 2n);
-  map.set(x, fibVal);
-  return fibVal;
+  return second;
 };
-console.log(fib(x));
+console.log(fib(x).toString());
