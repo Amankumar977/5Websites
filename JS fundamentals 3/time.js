@@ -1,3 +1,1 @@
-let n = 100000000000000000;
-let sum = (n * (n + 1)) / 2;
-console.log(sum);
+console.log((4 & 1) === 0 ? "Even" : "odd");
