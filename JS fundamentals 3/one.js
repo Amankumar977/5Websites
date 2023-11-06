@@ -8,6 +8,6 @@ db.sightings.aggregate([
     },
   },
   {
-    $out: "sightings_2022",
+    $out: "sightings_202",
   },
 ]);
