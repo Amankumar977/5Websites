@@ -6,7 +6,51 @@
     <title>Document</title>
     <link rel="stylesheet" href="../dist/output.css" />
   </head>
-  <body>
-    <h1 class="bg-red-500">Hello World</h1>
+  <body class="bg-purple-900 font-mono">
+    <main>
+      <form action="#">
+        <div class="flex justify-center items-center min-h-screen">
+          <div
+            class="border border-1 px-2 py-4 rounded-sm flex justify-start flex-col lg:px-8 lg:py-6 lg:rounded-md">
+            <h1 class="text-xl text-white lg:text-2xl">Passowrd generator</h1>
+            <input
+              type="text"
+              class="outline-none rounded-md mt-2 lg:px-4 placeholder:font-mono generatePass"
+              placeholder="click on generate Button" />
+            <div>
+              <button
+                class="bg-purple-500 mt-2 px-2 py-1 rounded-md generateButton">
+                Generate
+              </button>
+              <button
+                class="bg-purple-500 mt-2 px-2 py-1 rounded-md copyButton">
+                Copy to ClipBoard
+              </button>
+            </div>
+            <div class="flex justify-between items-center mt-2 passwordLength">
+              <p class="text-white">Password Length:</p>
+              <input type="text" class="mt-3 w-12 rounded-md outline-none" />
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <p class="text-white">Include uppercase letters</p>
+              <input type="checkbox" name="uppercaseCheckBox" id="upperCheck" />
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <p class="text-white">Include lowercase letters</p>
+              <input type="checkbox" name="lowerCheckBox" id="lowerCheck" />
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <p class="text-white">Include Numbers</p>
+              <input type="checkbox" name="numberCheckBox" id="numberCheck" />
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <p class="text-white">Include Symbols</p>
+              <input type="checkbox" name="symbolCheckBox" id="symbolCheck" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="../src/input.js"></script>
   </body>
 </html>
