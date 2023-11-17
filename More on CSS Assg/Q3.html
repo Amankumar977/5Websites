@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="Q3.css" />
+  </head>
+  <body>
+    <head>
+      <nav class="navBar">
+        <ul class="navUl">
+          <li>Home</li>
+          <li>About US</li>
+          <li>Contact</li>
+          <li>Blog</li>
+          <li>Login</li>
+        </ul>
+      </nav>
+    </head>
+    <script>
+      let borderStyle = ["dotted", "dashed", "solid", "groove", "hidden"];
+      let navLi = document.querySelectorAll(".navUl  li");
+      navLi.forEach((li, i) => {
+        li.addEventListener("mouseenter", () => {
+          li.style.borderBottom = `2px ${borderStyle[i]} red`;
+        });
+        li.addEventListener("mouseleave", () => {
+          li.style.borderBottom = `2px ${borderStyle[i]} green`;
+        });
+      });
+    </script>
+  </body>
+</html>

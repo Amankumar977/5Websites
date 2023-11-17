@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navBar {
+  background-color: aqua;
+  padding: 10px;
+}
+.navUl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navUl > li {
+  list-style-type: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+.navUl > li:hover {
+  color: rgb(34, 125, 21);
+  cursor: pointer;
+}

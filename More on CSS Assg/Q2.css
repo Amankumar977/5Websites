@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.innerDiv {
+  background-color: rgba(255, 255, 0, 0.904);
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 13rem;
+}
