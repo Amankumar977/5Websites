@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS File</title>
+  </head>
+  <style>
+    .formSelector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    #name {
+      border: 1px dotted gray;
+      outline: none;
+      background-color: cadetblue;
+      font-size: 20px;
+    }
+    .name {
+      font-size: 20px;
+    }
+    #Email {
+      border: 1px dotted gray;
+      outline: none;
+      background-color: cadetblue;
+      font-size: 20px;
+    }
+    .Email {
+      font-size: 20px;
+    }
+    #password {
+      border: 1px dotted gray;
+      outline: none;
+      background-color: cadetblue;
+      font-size: 20px;
+    }
+    .password {
+      font-size: 20px;
+    }
+    #Hidden {
+      border: 1px dotted gray;
+      outline: none;
+      background-color: cadetblue;
+      font-size: 20px;
+      opacity: 0;
+    }
+    .Hidden {
+      font-size: 20px;
+      opacity: 0;
+    }
+  </style>
+  <body>
+    <main>
+      <section>
+        <form action="#" class="formSelector">
+          <label for="name" class="name">Name : </label>
+          <input type="text" id="name" placeholder="Please Enter Name" />
+          <br />
+          <br />
+          <label for="Email" class="Email">Email : </label>
+          <input type="text" id="Email" placeholder="Please Enter Email" />
+          <br />
+          <br />
+          <label for="password" class="password">Password : </label>
+          <input
+            type="text"
+            id="password"
+            placeholder="Please Enter password" />
+          <label for="Hidden" class="Hidden">Hidden : </label>
+          <input type="text" id="Hidden" placeholder="Please Enter Hidden" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
