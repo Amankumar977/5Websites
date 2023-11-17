@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../More on CSS Assg/Q2 Pic.png"
+      type="image/x-icon" />
+    <title>Div In Center</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .mainDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .innerDiv {
+        background-color: rgba(255, 255, 0, 0.904);
+        border-radius: 10px;
+        padding: 5px;
+        text-align: center;
+        width: 13rem;
+      }
+      .innerDiv:hover {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="mainDiv">
+        <div class="innerDiv">
+          <img src="../More on CSS Assg/Q2 Pic.png" alt="This is PW Pic" />
+          <p>Course Name: Full Stack Web Development PW</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
