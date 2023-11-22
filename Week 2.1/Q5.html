@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="display: grid; place-items: center; min-height: 100vh">
+    <form action="#" method="post">
+      <h1>SignUp</h1>
+      <label for="firstName">First Name: *</label>
+      <input type="text" required id="firstName" />
+      <br />
+      <br />
+      <label for="lastName">Last Name: *</label>
+      <input type="text" required id="lastName" />
+      <br />
+      <br />
+      <label for="email">Email: *</label>
+      <input type="email" required id="email" />
+      <br />
+      <br />
+      <label for="password">Password: *</label>
+      <input type="password" required id="password" />
+      <br />
+      <br />
+      <label for="gender">Gender: *</label>
+      <select name="gender" id="gender">
+        <option value="select">Please select...</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="others">Others</option>
+      </select>
+      <br />
+      <br />
+      <label for="age">Age *:</label>
+      <input type="number" name="age" id="age" />
+      <br />
+      <br />
+      <div style="text-align: center">
+        <button type="submit" id="submitButton" style="margin-right: 30px">
+          Submit
+        </button>
+        <a href="index2.html">Sign In</a>
+      </div>
+    </form>
+    <script>
+      let submitButton = document.getElementById("submitButton");
+      submitButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        nameAndEmailValidationCheck();
+        passwordValidationCheck();
+        ageValidationCheck();
+        // Add form submission logic if needed
+      });
+
+      function checkThevalues(input, inputValue) {
+        let inputLength = input.value.length;
+        if (inputLength < 3) {
+          alert(`The ${inputValue} cannot be less than 3 characters.`);
+        }
+      }
+
+      let nameAndEmailValidationCheck = () => {
+        let firstName = document.getElementById("firstName");
+        let lastName = document.getElementById("lastName");
+        let email = document.getElementById("email");
+        checkThevalues(firstName, "First Name");
+        checkThevalues(lastName, "Last Name");
+        checkThevalues(email, "Email");
+      };
+
+      let passwordValidationCheck = () => {
+        let password = document.getElementById("password");
+        let passwordLength = password.value.length;
+        if (passwordLength < 6) {
+          alert("The password length cannot be less than 6 digits.");
+        }
+      };
+
+      let ageValidationCheck = () => {
+        let age = document.getElementById("age");
+        let ageValue = age.value;
+        if (ageValue <= 0 || ageValue > 150) {
+          alert("Please enter a correct age.");
+        }
+      };
+    </script>
+  </body>
+</html>
