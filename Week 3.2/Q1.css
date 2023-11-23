@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainDiv {
+  height: 380px;
+  width: 380px;
+  border: 2px solid black;
+  margin-left: 200px;
+  margin-top: 200px;
+  position: relative;
+}
+.mainDiv > div {
+  background-color: aquamarine;
+  width: 180px;
+  height: 180px;
+  text-align: center;
+  font-size: 50px;
+}
+.eDiv {
+  position: absolute;
+  top: 197px;
+  left: 197px;
+}
+.dDiv {
+  position: absolute;
+  top: 197px;
+}
+.cDiv {
+  position: absolute;
+  left: 197px;
+  top: 0;
+}
+.bDiv {
+  position: absolute;
+  top: 0;
+}
+.aDiv {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
