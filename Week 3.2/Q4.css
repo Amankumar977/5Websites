@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  background-color: rgb(82, 82, 82);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
+nav > img {
+  width: 70px;
+}
+nav > div > Ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 600px;
+}
+nav > div > Ul > li {
+  list-style-type: none;
+  padding: 20px;
+  font-size: 20px;
+}
+nav > button {
+  border: 1px solid orangered;
+  padding-inline: 15px;
+  padding-block: 15px;
+  border-radius: 10px;
+  color: orangered;
+  background-color: inherit;
+  margin-right: 10px;
+}
