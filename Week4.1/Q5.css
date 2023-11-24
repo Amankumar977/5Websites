@@ -1,0 +1,185 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.optionSection {
+  max-width: 1182px;
+  width: 1000px;
+  margin-inline: 20px;
+  margin-top: 20px;
+  padding-inline: 50px;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+}
+.imgSection > img {
+  width: full;
+  height: 748px;
+}
+.optionSectionTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.askOptions {
+  display: flex;
+  gap: 1rem;
+}
+.askOptions > div {
+  display: flex;
+  flex-direction: column;
+}
+.askOptions > div > button {
+  width: Hug (71.42px);
+  height: Hug (38.28px);
+  padding: 5px 7.5px;
+  border: none;
+  border-radius: 5.07px;
+  gap: 10.14px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.loginButton {
+  width: Hug (71.42px);
+  height: Hug (38.28px);
+  padding: 5px 7.5px;
+  border: none;
+  border-radius: 5.07px;
+  background: #fb792b;
+  color: white;
+  gap: 10.14px;
+}
+.optionSectionDesc {
+  margin-block: 20px;
+}
+.optionSectionDesc > h1 {
+  font-family: Inter;
+  font-size: 49px;
+  font-weight: 700;
+  line-height: 59px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.optionSectionDesc > div > span {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.Safety {
+  color: #01bb0a;
+  margin-right: 15px;
+}
+.Security {
+  color: #fb792b;
+  margin-right: 15px;
+}
+.Punctuality {
+  color: #333333;
+  margin-right: 15px;
+}
+.optionSectionStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bookStatsOpt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: Hug (178.89px);
+  height: Hug (44.61px);
+  padding: 10.14px 15.21px 10.14px 15.21px;
+  border-radius: 5.07px;
+  background: #213d77;
+  gap: 10.14px;
+  color: aliceblue;
+}
+.pnrStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: Hug (164.89px);
+  height: Hug (44.61px);
+  padding: 10.14px 15.21px 10.14px 15.21px;
+  border-radius: 5.07px;
+  border: 1.01px;
+  border: 1.01px solid #33333380;
+  gap: 10.14px;
+}
+.chartsStat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: Hug (164.89px);
+  height: Hug (44.61px);
+  padding: 10.14px 15.21px 10.14px 15.21px;
+  border-radius: 5.07px;
+  border: 1.01px;
+  border: 1.01px solid #33333380;
+  gap: 10.14px;
+}
+.railBook {
+  margin-top: 30px;
+  border: 1.01px solid #3333331a;
+  height: 105px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 40px;
+}
+.railBookSec1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.3rem;
+}
+
+.railBookSec2 {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.railBookSec2 > span {
+  margin-bottom: 2px;
+}
+.railTime {
+  margin-top: 30px;
+  border: 1.01px solid #3333331a;
+  height: 105px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 40px;
+}
+.searchBtn {
+  background: #01bb0a;
+  width: 100%;
+  width: 600px;
+  height: 81.11px;
+  border-radius: 10.14px;
+  text-align: center;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+  margin-left: 200px;
+}

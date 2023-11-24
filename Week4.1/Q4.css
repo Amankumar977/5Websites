@@ -1,0 +1,95 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: monospace;
+}
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+.mainDiv > div {
+  background: #f4f2fd;
+  width: 1450px;
+  height: 380px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.insideDiv {
+  width: 250px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  height: 330px;
+  box-shadow: 0px 1px 10px 0px #00000040;
+}
+.insideDiv > h3 {
+  font-size: 2rem;
+  color: #202842;
+}
+.insideDivPrice {
+  margin-top: 5px;
+  font-size: 2rem;
+  color: #202842;
+}
+.insideDiv > ul > li {
+  list-style-type: none;
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #202842;
+}
+.insideDivBtn {
+  text-align: center;
+  margin-block: 2rem;
+  color: #202842;
+}
+.insideDivBtn > button {
+  border-radius: 50px;
+  background: #202842;
+  color: #ffffff;
+  padding-inline: 1rem;
+  padding-block: 0.7rem;
+  cursor: pointer;
+}
+
+.insideDiv1 {
+  width: 250px;
+  background: #202842;
+  padding: 32px;
+  border-radius: 8px;
+  height: 330px;
+  box-shadow: 0px 1px 10px 0px #00000040;
+  color: #ffffff;
+}
+.insideDiv1 > h3 {
+  font-size: 2rem;
+}
+.insideDivPrice1 {
+  margin-top: 5px;
+  font-size: 2rem;
+}
+.insideDiv1 > ul > li {
+  list-style-type: none;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.insideDivBtn1 {
+  text-align: center;
+  margin-block: 2rem;
+}
+.insideDivBtn1 > button {
+  border-radius: 50px;
+  background: #ffffff;
+  color: #202842;
+  padding-inline: 1rem;
+  padding-block: 0.7rem;
+  cursor: pointer;
+}
