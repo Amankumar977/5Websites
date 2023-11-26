@@ -1,11 +1,8 @@
-let nums = [1, 3, 4, 2, 2];
-let n = nums.length;
-for (let i = 0; i < n; i++) {
-  let idx = nums[i] - 1;
-  if (nums[idx] < 0) {
-    return nums[i];
-  } else {
-    nums[idx] = -nums[idx];
+let number = 6;
+let fibonnaciSeries = (number) => {
+  if (number === 0 || number === 1) {
+    return number;
   }
-}
-console.log(nums);
+  return fibonnaciSeries(number - 1) + fibonnaciSeries(number - 2);
+};
+console.log(fibonnaciSeries(number));
