@@ -1,8 +1,10 @@
-let number = 6;
-let fibonnaciSeries = (number) => {
-  if (number === 0 || number === 1) {
-    return number;
+let number = 89;
+let k = 10;
+let printMultiples = (number, k) => {
+  if (k === 0) {
+    return;
   }
-  return fibonnaciSeries(number - 1) + fibonnaciSeries(number - 2);
+  printMultiples(number, k - 1);
+  console.log(`${number} x ${k} = ${number * k}`);
 };
-console.log(fibonnaciSeries(number));
+printMultiples(number, k);
