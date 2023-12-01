@@ -1,12 +1,13 @@
-let a = 12;
-let b = 6;
-let gcd = (a, b) => {
-  if (b === 0) {
-    return a;
+let name = "";
+let i = 0;
+let j = name.length - 1;
+let checkIsvalidPlan = (name, i, j) => {
+  if (i > j) {
+    return true;
   }
-  let reminder = a % b;
-  return gcd(b, reminder);
+  if (name[i] !== name[j]) {
+    return false;
+  }
+  return checkIsvalidPlan(name, ++i, --j);
 };
-let hcf = gcd(a, b);
-let lcm = (a * b) / hcf;
-console.log(lcm);
+console.log(checkIsvalidPlan(name, i, j));

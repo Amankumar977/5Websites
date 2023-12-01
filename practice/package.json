@@ -1,0 +1,11 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "p.js",
+  "scripts": {
+    "dev": "npm run"
+  },
+  "author": "",
+  "license": "ISC"
+}
