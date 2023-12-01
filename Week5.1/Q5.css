@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 100px;
+  text-align: center;
+  font-size: 40px;
+}
+.box1 {
+  background-color: rgb(78, 76, 76);
+}
+.box2 {
+  background-color: aqua;
+}
+.box3 {
+  background-color: rgb(243, 151, 95);
+}
+.box4 {
+  background-color: rgb(78, 76, 76);
+  margin-top: 400px;
+}
+@media screen and (min-width: 768px) {
+  .conatiner {
+    display: flex;
+    justify-content: center;
+  }
+  .box {
+    height: 100vh;
+    width: 100vh;
+  }
+  .innnerbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .box2 {
+    background-color: aqua;
+    height: 50vh;
+    width: 100vh;
+  }
+  .box3 {
+    background-color: rgb(243, 151, 95);
+    height: 50vh;
+    width: 100vh;
+  }
+  .box4 {
+    margin-top: 0px;
+  }
+}

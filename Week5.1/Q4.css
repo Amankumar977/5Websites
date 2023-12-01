@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container > div {
+  height: 180px;
+  padding: 10px;
+  margin: 10px;
+}
+.box1 {
+  background-color: #00ffff;
+}
+.box2 {
+  background-color: #15ff00;
+}
+.box3 {
+  background-color: #ff1100;
+}
+.box4 {
+  background-color: #dd00ff;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
+  .container > div {
+    height: 300px;
+    border-radius: 10px;
+  }
+}
