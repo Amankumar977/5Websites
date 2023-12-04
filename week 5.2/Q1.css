@@ -1,0 +1,46 @@
+nav a {
+  color: red;
+}
+nav > h2 {
+  color: aqua;
+  background-color: aliceblue;
+  text-align: center;
+  font-size: 5rem;
+}
+nav > p {
+  color: red;
+}
+nav a[href="#"] {
+  color: red;
+  text-decoration: none;
+}
+nav a[class="active"] {
+  color: aqua;
+  text-decoration: underline;
+}
+nav a[target="_self"] {
+  background-color: darkcyan;
+}
+/* ul {
+  list-style: none;
+}
+p:last-child::after {
+  content: "...";
+}
+ul li::before {
+  color: rgb(255, 145, 0);
+  content: "\2022";
+  display: inline-block;
+  width: 2rem;
+  margin-left: -1em;
+} */
+p:last-child::after {
+  content: "...";
+}
+li::marker {
+  color: aquamarine;
+}
+p:nth-child(even)::first-letter {
+  color: red;
+  font-size: 30px;
+}
