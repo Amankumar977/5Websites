@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #00b7ff;
+  --secondary-color: #6c757d;
+}
+.pBtn {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.sBtn {
+  background-color: var(--secondary-color);
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
