@@ -1,0 +1,23 @@
+body {
+  background-color: #a5a5a5;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+.round {
+  border: 2px solid #ffffff;
+  border-top: 4px solid rgb(0, 213, 255);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
