@@ -1,0 +1,9 @@
+.cardSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.my-btn {
+  width: 100%;
+}

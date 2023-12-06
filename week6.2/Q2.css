@@ -1,0 +1,10 @@
+.carousel {
+  width: 30%;
+  border-radius: 20px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
