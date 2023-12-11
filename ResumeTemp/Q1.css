@@ -1,0 +1,137 @@
+/* 
+CSS Reset
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+Utility
+*/
+.boxOfUti {
+  display: flex;
+  padding-top: 10px;
+  gap: 30px;
+}
+.fromTO {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 790px;
+}
+/* 
+CSS
+ */
+body {
+  font-family: sans-serif;
+}
+section {
+  display: flex;
+  align-items: center;
+}
+.yourInfoContact {
+  width: 25%;
+  background-color: gray;
+  height: 60rem;
+}
+.yourInfoExp {
+  width: 75%;
+  background-color: rgb(242, 240, 240);
+  height: 60rem;
+  padding: 20px;
+  padding-inline: 150px;
+}
+.mainProfile {
+  background-color: #4b4bcd;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+.mainProfile > img {
+  height: 150px;
+  width: 150px;
+  border-radius: 70%;
+  padding-bottom: 5px;
+}
+.refLink {
+  padding-top: 10px;
+}
+.refLink > a {
+  color: #fff;
+  text-decoration: none;
+}
+#GitHubId {
+  padding-right: 30px;
+}
+.cscDiv {
+  padding: 40px;
+  color: #fff;
+}
+.contactInfo .contactInfoHead {
+  font-size: 40px;
+  border-bottom: 3px solid white;
+}
+.contactInfo a {
+  text-decoration: none;
+  color: #b8b6b6;
+  padding-top: 5px;
+}
+.mpC {
+  padding: 10px;
+}
+.mpC div {
+  padding-top: 5px;
+}
+
+.skillSecHead {
+  font-size: 40px;
+  border-bottom: 3px solid white;
+  margin-top: 5px;
+}
+.skillsTag {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #fff;
+  width: 250px;
+  position: relative;
+}
+.skillsTag > div {
+  border-bottom: 3px solid #4b4bcd;
+  width: 200px;
+  position: absolute;
+  top: 29px;
+}
+.certDivHead {
+  padding-top: 40px;
+  font-size: 40px;
+  border-bottom: 2px solid white;
+}
+.certSec {
+  padding: 20px;
+}
+.certSec > div {
+  padding: 5px;
+}
+
+.objHead {
+  font-size: 30px;
+  color: #4b4bcd;
+  border-bottom: 2px solid black;
+}
+.Objective > p {
+  color: #818080;
+  padding-top: 10px;
+}
+.expHead {
+  padding-top: 20px;
+  font-size: 30px;
+  color: #4b4bcd;
+  border-bottom: 2px solid black;
+}
+.fromToP {
+  color: #818080;
+  margin-top: 5px;
+}
