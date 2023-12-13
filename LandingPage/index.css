@@ -19,7 +19,7 @@ body {
   background-position: center;
 }
 nav {
-  margin-inline: 200px;
+  margin-inline: 50px;
 }
 nav > ul {
   display: flex;
@@ -46,7 +46,101 @@ nav > ul > li {
   border: none;
   background-color: var(--primary-Color);
   padding: 10px;
+  padding-inline: 15px;
   margin-left: 8px;
   cursor: pointer;
+  color: #fff;
   border-radius: 8px;
+}
+/* Section */
+section {
+  margin-inline: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.secDiv1 {
+  width: 42%;
+  margin-top: 8rem;
+  height: 35rem;
+}
+.cdDiv > p {
+  font-size: 60px;
+}
+.introPara {
+  color: var(--secondary-color);
+  margin-top: 15px;
+}
+.btn {
+  cursor: pointer;
+  padding-block: 16px;
+  padding-inline: 30px;
+  font-size: 16px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+.applyBtn {
+  border: none;
+  background-color: var(--primary-Color);
+  color: #fff;
+}
+.loanBtn {
+  border: 1px solid var(--primary-Color);
+  color: var(--primary-Color);
+  margin-left: 15px;
+  background-color: #fff;
+}
+.btF {
+  display: flex;
+  align-items: center;
+  width: 9rem;
+  justify-content: space-between;
+}
+.btF > div {
+  width: 10px;
+  margin-top: 50px;
+}
+.callNo {
+  text-decoration: none;
+  color: #828080;
+}
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.socialMedia > img {
+  cursor: pointer;
+}
+.imgDiv {
+  width: 70%;
+  position: relative;
+}
+.imgDiv > div {
+  width: 180px;
+}
+.Img {
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 8rem !important;
+  gap: 5px;
+  box-shadow: 2px 2px 2px var(--secondary-color);
+  background-color: #fff;
+}
+.Img > img {
+  width: 25px;
+}
+.carImg {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+}
+.homeImg {
+  position: absolute;
+  top: 10rem;
+  left: 40rem;
 }
