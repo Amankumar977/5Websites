@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+CSS COLORS
+*/
+
+:root {
+  --primary-Color: #ea3388;
+  --secondary-color: #828080;
+}
+body {
+  background-image: url("../LandingPage/Assets/background-image.png");
+
+  background-position: center;
+}
+nav {
+  margin-inline: 200px;
+}
+nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav > ul > li {
+  list-style-type: none;
+}
+.innerUl {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+.innerUl > li {
+  cursor: pointer;
+}
+.serachBtn {
+  color: var(--primary-Color);
+}
+.serachBtn > button {
+  border: none;
+  background-color: var(--primary-Color);
+  padding: 10px;
+  margin-left: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
