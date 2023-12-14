@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Quiz App</title>
+  </head>
+  <body class="font-mono text-2xl">
+    <main>
+      <section class="flex flex-col items-center justify-center mt-40">
+        <div class="w-[50rem] p-3 bg-[#4a4949] text-white">
+          <div class="text-3xl text-center">Quiz App</div>
+          <div class="flex justify-between w-full">
+            <div>Question <span class="questionNum">1</span>/10</div>
+            <div>Score <span class="score">0</span></div>
+          </div>
+        </div>
+        <div class="w-[50rem] mt-6">
+          <p class="text-2xl">What is 2+2?</p>
+        </div>
+        <div class="w-[50rem] mt-6">
+          <form action="#">
+            <label for="A">
+              <input
+                type="text"
+                name="A"
+                id="A"
+                value="A. 2"
+                class="w-full p-2 mb-4 border border-gray-500" />
+            </label>
+
+            <label for="2">
+              <input
+                type="text"
+                name="B"
+                id="B"
+                value="B. 5"
+                class="w-full p-2 mb-4 border border-gray-500" />
+            </label>
+            <label for="3">
+              <input
+                type="text"
+                name="C"
+                id="C"
+                value="C. 4"
+                class="w-full p-2 mb-4 border border-gray-500" />
+            </label>
+            <label for="4">
+              <input
+                type="text"
+                name="D"
+                id="D"
+                value="D. 8"
+                class="w-full p-2 mb-4 border border-gray-500" />
+            </label>
+          </form>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="bg-[#4a4949] px-4 py-2 border-none"
+            style="color: aliceblue">
+            Next
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="../src/index.js"></script>
+  </body>
+</html>
