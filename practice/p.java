@@ -3,21 +3,28 @@ import java.util.*;
 class p {
 
 	public static void main(String[] args) {
-		int n = 8561;
-		System.out.println(alternateDigitSum(n));
+		String s = "anagram";
+        String t = "nagaram";
+        System.out.println(isAnagram(s, t));
 	}
-	public static int alternateDigitSum(int n) {
-        char nums[]= String.valueOf(n).toCharArray();
-        int sum = 0;
-        for(int i=0; i<nums.length; i++){
-            if(i % 2==0){
-              sum += (int)nums[i];
-			  System.out.println(sum);
-            }else{
-                sum -= (int)nums[i];
-				  System.out.println(sum);
-            }
+    public static boolean isAnagram(String s, String t) {
+        int lengthOfs = s.length();
+        int lengthOft = t.length();
+        if(lengthOfs != lengthOft){
+            return false;
         }
-        return sum;
+        Map<Character, Integer> scharValues = new HashMap<>();
+        for(int i=0; i<lengthOfs; i++){
+            scharValues.put(s.charAt(i), scharValues.getOrDefault(s.charAt(i), 0)+1);
+        }
+        scharValues.size()
+        for(int i=0; i<lengthOft; i++){
+            if(!scharValues.containsKey(t.charAt(i))){
+                return false;
+            }
+            System.out.println(lengthOft--);
+        
+        }
+        return true;
     }
 } 
