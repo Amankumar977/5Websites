@@ -1,20 +1,16 @@
-let arr = [1, 1, 2, 2, 3, 10, 10, 10, 4, 4, 4, 5, 7, 7, 1, 2];
-let nonConsecSub = (arr) => {
-  let n = arr.length;
+let arr = [1, 5, 3, 2, 1, 6, 3, 4];
+let greaterElement = (arr, n) => {
   let stack = [];
-  let currValue = arr[0];
-  stack.push(currValue);
-  let currCount = 1;
+  let res = new Array(n);
+  res.fill(-1, 0);
+  stack.push(0);
   for (let i = 1; i < n; i++) {
-    if (currValue != arr[i]) {
-      currValue = arr[i];
-      stack.push(currValue);
-      currCount = 1;
-    } else if (currCount == 1 && currValue == arr[i]) {
-      stack.pop();
-      currCount--;
+    let value = arr[i];
+    while (stack.length !== 0 && value >= arr[stack[stack.length - 1]]) {
+      res[stack.pop()] = value;
     }
+    stack.push(i);
   }
-  return stack;
+  return res;
 };
-console.log(nonConsecSub(arr));
+console.log(greaterElement(arr, arr.length));
