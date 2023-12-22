@@ -14,14 +14,20 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req, res) => {
   const shortUrls = await ShortUrl.find();
-  res.render("index.ejs", { shortUrls: shortUrls });
+  res.render("index", { shortUrls: shortUrls });
 });
-
+const userRoute = require("./router/user");
 app.post("/shortUrls", async (req, res) => {
   await ShortUrl.create({ fullUrl: req.body.fullUrl });
   res.redirect("/");
 });
-
+app.post("/", userRoute);
+app.get("/signup", (req, res) => {
+  return res.render("signup");
+});
+app.get("/login", (req, res) => {
+  return res.render("login");
+});
 app.get("/:shortUrl", async (req, res) => {
   try {
     const shortUrl = await ShortUrl.findOne({ shortUrl: req.params.shortUrl });
