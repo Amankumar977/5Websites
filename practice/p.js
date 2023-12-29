@@ -1,15 +1,19 @@
-let str = "abc";
-let printPermutations = (str, t) => {
-  if (str == "") {
-    console.log(t);
+let arr = [1, 2, 3];
+let finalArr = [];
+let printPermutations = (arr, tempArr, finalArr) => {
+  if (arr.length == 0) {
+    finalArr.push([...tempArr]);
     return;
   }
-  for (let i = 0; i < str.length; i++) {
-    let ch = str[i];
-    let left = str.substring(0, i);
-    let right = str.substring(i + 1);
-    let rem = left + right;
-    printPermutations(rem, t + ch);
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i];
+    let left = arr.slice(0, i);
+    let right = arr.slice(i + 1);
+    let rem = [...left, ...right];
+    tempArr.push(num);
+    printPermutations(rem, tempArr, finalArr);
+    tempArr.pop();
   }
 };
-printPermutations(str, "");
+printPermutations(arr, [], finalArr);
+console.log(finalArr);
