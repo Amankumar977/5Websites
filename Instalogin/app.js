@@ -1,0 +1,10 @@
+const express = require("express");
+const app = express();
+const { authRouter } = require("./router/authRouter");
+const { dataBaseConnect } = require("./config/dbConfig");
+const cookieParser = require("cookie-parser");
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use("/api", authRouter);
+dataBaseConnect();
+module.exports = app;
