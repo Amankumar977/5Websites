@@ -1,0 +1,28 @@
+.Grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.innerGrid {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 500px;
+}
+.turn-high {
+  color: var(--yellow);
+}
+.reset {
+  padding: 8px 16px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(248, 248, 248);
+  background-color: #bcaf1d;
+  color: rgb(255, 255, 255);
+}
+.center {
+  text-align: center;
+}
