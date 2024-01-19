@@ -4,7 +4,7 @@ import avatar from "../assets/profile.png";
 import styles from "../styles/Username.module.css";
 import { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
-import { usernameValidate } from "../helper/validate";
+import { registervalidate } from "../helper/validate";
 import convertToBase64 from "../helper/convert";
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +20,7 @@ function Register() {
       username: "",
       password: "",
     },
-    validate: usernameValidate,
+    validate: registervalidate,
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
@@ -29,7 +29,7 @@ function Register() {
     },
   });
   const onUpload = async (e) => {
-    const base64 = await convertToBase64(e);
+    const base64 = await convertToBase64(e.target.files[0]);
     setFile(base64);
   };
   return (
@@ -53,6 +53,7 @@ function Register() {
                 />
               </label>
               <input
+                onChange={onUpload}
                 type="file"
                 name="profile"
                 id="profile"

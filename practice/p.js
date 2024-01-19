@@ -1,25 +1,29 @@
-let canPlaceFlowers = (flowerbed, n) => {
-  let k = flowerbed.length;
-  for (let i = 0; i < k && n > 0; i++) {
-    if (flowerbed[i] == 0) {
-      if (i == 0) {
-        if (flowerbed[i + 1] == 0) {
-          flowerbed[i] = 1;
-          n--;
-        }
-      } else if (i == k - 1) {
-        if (flowerbed[k - 2] == 0) {
-          flowerbed[k - 1] = 1;
-          n--;
-        }
-      } else if (flowerbed[i - 1] == 0 && flowerbed[i + 1] == 0) {
-        flowerbed[i] = 1;
-        n--;
-      }
-    }
+function maximumSwap(num) {
+  let numArr = num.toString().split('');
+  let lastOccurrence = Array(10).fill(0);
+
+  // Record the last occurrence index of each digit
+  for (let i = 0; i < numArr.length; i++) {
+      lastOccurrence[parseInt(numArr[i])] = i;
   }
-  return n == 0;
-};
-let flowerbed = [1, 0, 1, 0, 1, 0, 1];
-let n = 1;
-console.log(canPlaceFlowers(flowerbed, n));
+
+  // Iterate through each digit and find the maximum possible swap
+  for (let i = 0; i < numArr.length; i++) {
+      for (let d = 9; d > parseInt(numArr[i]); d--) {
+          if (lastOccurrence[d] > i) {
+              // Swap and convert back to integer
+              let temp = numArr[i];
+              numArr[i] = numArr[lastOccurrence[d]];
+              numArr[lastOccurrence[d]] = temp;
+              return parseInt(numArr.join(''));
+          }
+      }
+  }
+
+  // If no swap is needed, return the original number
+  return num;
+}
+
+// Example usage:
+let result = maximumSwap(2736);
+console.log(result);  // Output: 7236

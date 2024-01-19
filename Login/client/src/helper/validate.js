@@ -24,9 +24,25 @@ export async function resetpasswordValidation(value) {
   }
   return errors;
 }
+/**
+ * Validate register
+ */
+export async function registervalidate(value) {
+  const errors = passwordVerify({}, value);
+  usernameVerify({}, value);
+  emailVerify({}, value);
+  return errors;
+}
+/**
+ * Validate the Profile page
+ */
+export async function profileValidate(value) {
+  const errors = emailVerify({}, value);
+  return errors;
+}
 
 /**
- * Validate Username
+ * verify Username
  */
 function usernameVerify(error = {}, value) {
   if (!value.username) {
@@ -38,7 +54,7 @@ function usernameVerify(error = {}, value) {
 }
 
 /**
- * Validate Password
+ * verify Password
  */
 let passwordVerify = (error = {}, value) => {
   const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
@@ -50,6 +66,18 @@ let passwordVerify = (error = {}, value) => {
     error.password = toast.error("Password length cannot be less than 6");
   } else if (!specialChars.test(value.password)) {
     error.password = toast.error("Password must include special character");
+  }
+  return error;
+};
+let emailVerify = (error = {}, value) => {
+  const regex =
+    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  if (!value.email) {
+    error.email = toast.error("Email is required");
+  } else if (value.email.includes(" ")) {
+    error.email = toast.error("Wrong Email");
+  } else if (!regex.test(value.email)) {
+    error.email = toast.error("Please Enter a valid email id");
   }
   return error;
 };
