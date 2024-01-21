@@ -1,6 +1,22 @@
 import userModel from "../model/user.model.js";
 import bcrypt from "bcrypt";
-
+import otpGenerator from "otp-generator";
+export async function verifyUser(req, res, next) {
+  try {
+    const { username } = req.method == "GET" ? req.query : req.body;
+    let exist = userModel.findOne({ username });
+    if (!exist) {
+      return res.status(404).send({
+        error: "Cannot fnd user",
+      });
+    }
+    next();
+  } catch (error) {
+    return res.status(404).send({
+      error: "Authentication error",
+    });
+  }
+}
 /** POST: http://localhost:5000/api/register 
  * @param : {
   "username" : "example123",
@@ -125,18 +141,10 @@ export async function login(req, res) {
     const token = user.jwtToken();
     user.password = undefined;
 
-    const cookieOption = {
-      maxAge: 30 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-    };
-
-    res.cookie("token", token, cookieOption);
-
-    console.log(token);
-
     return res.status(200).json({
       success: true,
       message: "User logged in successfully",
+      token,
     });
   } catch (error) {
     return res.status(500).json({
@@ -148,44 +156,25 @@ export async function login(req, res) {
 /**
  * To verify the user
  */
-export async function verifyUser(req, res, next) {
-  try {
-    const { username } = req.method == "GET" ? req.query : req.body;
-    let exist = userModel.findOne({ username });
-    if (!exist) {
-      return res.status(404).send({
-        error: "Cannot fnd user",
-      });
-    }
-    next();
-  } catch (error) {
-    return res.status(404).send({
-      error: "Authentication error",
-    });
-  }
-}
+
 /** Get: http://localhost:5000/api/user/idExample*/
 export async function getUser(req, res) {
   const { username } = req.params;
 
-  if (!username) {
-    return res.status(400).send({ error: "Invalid Username" });
-  }
-
   try {
-    const user = await userModel.findOne({ username }).lean();
+    if (!username) return res.status(501).send({ error: "Invalid Username" });
 
+    const user = await userModel.findOne({ username });
     if (!user) {
-      return res.status(404).send({ error: "User Not Found" });
+      return res.status(404).send({ msg: "User Not found" });
     }
     user.password = undefined;
-
     return res.status(200).send(user);
   } catch (error) {
-    console.error(error);
-    return res.status(500).send({ error: "Internal Server Error" });
+    return res.status(404).send({ error: error.message });
   }
 }
+
 /** PUT: http://localhost:8080/api/updateuser 
  * @param: {
   "header" : "<token>"
@@ -198,42 +187,98 @@ body: {
 */
 export async function updateUser(req, res) {
   try {
-    const id = req.params._id; // Assuming the user ID is in the URL parameters
-    if (id) {
+    // const id = req.query.id;
+    const { userId } = req.user;
+
+    if (userId) {
       const body = req.body;
-      const updatedUser = await userModel.findOneAndUpdate({ _id: id }, body, {
+
+      // update the data
+      const updatedDetails = await userModel.findByIdAndUpdate(userId, body, {
         new: true,
       });
-
-      if (!updatedUser) {
-        return res.status(500).send({ error: "Unable to update the user" });
+      if (!updatedDetails) {
+        return res.status(500).json({
+          success: false,
+          message: "Internal Server Error",
+        });
       }
-
-      // Omit sensitive information like password before sending the response
-      updatedUser.password = undefined;
-
-      return res.status(201).send({ updatedUser });
+      return res.status(200).json({
+        success: true,
+        data: updatedDetails,
+      });
     } else {
-      return res.status(404).send({ Error: "Id not found" });
+      return res.status(401).send({ error: "User Not Found...!" });
     }
   } catch (error) {
-    return res.status(401).send({ error: error.message, msg: "here" });
+    return res.status(401).send({ error: error.message });
   }
 }
 
 /** Get: http://localhost:5000/api/generateOTP*/
 export async function generateOTP(req, res) {
-  return res.json("OTP Generated");
+  req.app.locals.OTP = await otpGenerator.generate(6, {
+    lowerCaseAlphabets: false,
+    upperCaseAlphabets: false,
+    specialChars: false,
+  });
+  res.status(201).send({ code: req.app.locals.OTP });
 }
 /** Get: http://localhost:5000/api/verifyOTP*/
 export async function verifyOTP(req, res) {
-  return res.json("OTP Verified");
+  const { code } = req.query;
+  if (parseInt(code) === parseInt(req.app.locals.OTP)) {
+    req.app.locals.OTP = null;
+    req.app.locals.resetSession = true;
+    return res.status(201).send({ msg: "OTP verified" });
+  }
+  return res.status(400).send({ msg: "Invalid OTP" });
 }
 /** Get: http://localhost:5000/api/createResetSession*/
 export async function createResetSession(req, res) {
-  return res.json("OTP Verified");
+  if (req.app.locals.resetSession) {
+    req.app.locals.resetSession = false;
+    return res.status(201).send({ msg: "access Granted" });
+  }
+  return res.status(400).send({ error: "session expired! " });
 }
 /** PUT: http://localhost:5000/api/resetPassword*/
 export async function resetPassword(req, res) {
-  return res.json("Password Changed");
+  if (!req.app.locals.resetSession) {
+    return res.status(400).send({ error: "session expired! " });
+  }
+  try {
+    const { username, password } = req.body;
+    try {
+      userModel
+        .findOne({ username })
+        .then((user) => {
+          bcrypt
+            .hash(password, 10)
+            .then((hashedPassword) => {
+              userModel.findOneAndUpdate(
+                { username: user.username },
+                { password: hashedPassword }
+              );
+            })
+            .then(() => {
+              req.app.locals.resetSession = false;
+              res.status(200).send({ msg: "user password updated" });
+            })
+            .catch((error) => {
+              return res.status(500).send({ error: error.message });
+            })
+            .catch((error) => {
+              return res.status(500).send({ error: error.message });
+            });
+        })
+        .catch((error) => {
+          return res.status(404).send({ error: error.message });
+        });
+    } catch (error) {
+      return res.status(500).send({ error: error.message });
+    }
+  } catch (error) {
+    return res.status(401).send({ error: error.message });
+  }
 }

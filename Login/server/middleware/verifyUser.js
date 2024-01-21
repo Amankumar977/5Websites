@@ -1,37 +1,35 @@
-import JWT from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
-function verifyUser(req, res, next) {
-  const token = (req.cookies && req.cookies.token) || null;
-
-  if (!token) {
-    return res.status(401).json({
-      success: false,
-      message: "Unauthorized",
-    });
-  }
-
+function Auth(req, res, next) {
   try {
-    const payload = JWT.verify(token, process.env.SECRET);
-    req.user = { id: payload.id, username: payload.username };
+    const token = req.headers.authorization.split(" ")[1];
+    const decodedToken = jwt.verify(token, process.env.SECRET);
+    req.user = decodedToken;
     next();
   } catch (error) {
-    if (error instanceof JWT.TokenExpiredError) {
+    if (error instanceof jwt.TokenExpiredError) {
       return res.status(401).json({
         success: false,
         message: "Token expired",
       });
-    } else if (error instanceof JWT.JsonWebTokenError) {
+    } else if (error instanceof jwt.JsonWebTokenError) {
       return res.status(401).json({
         success: false,
         message: "Invalid token",
       });
     } else {
-      return res.status(500).json({
+      return res.status(401).json({
         success: false,
-        message: "Internal Server Error",
+        message: "Error Autentication failed",
       });
     }
   }
 }
-
-export default verifyUser;
+export function localVariables(req, res, next) {
+  req.app.locals = {
+    OTP: null,
+    resetSession: false,
+  };
+  next();
+}
+export default Auth;

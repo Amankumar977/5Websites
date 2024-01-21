@@ -1,29 +1,46 @@
-function maximumSwap(num) {
-  let numArr = num.toString().split('');
-  let lastOccurrence = Array(10).fill(0);
-
-  // Record the last occurrence index of each digit
-  for (let i = 0; i < numArr.length; i++) {
-      lastOccurrence[parseInt(numArr[i])] = i;
-  }
-
-  // Iterate through each digit and find the maximum possible swap
-  for (let i = 0; i < numArr.length; i++) {
-      for (let d = 9; d > parseInt(numArr[i]); d--) {
-          if (lastOccurrence[d] > i) {
-              // Swap and convert back to integer
-              let temp = numArr[i];
-              numArr[i] = numArr[lastOccurrence[d]];
-              numArr[lastOccurrence[d]] = temp;
-              return parseInt(numArr.join(''));
-          }
+function downloader(url) {
+  console.log("Download started from the URL", url);
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let download = true;
+      if (download) {
+        res(console.log("The data is downloaded"));
+      } else {
+        rej(console.log("The data download was failed"));
       }
-  }
-
-  // If no swap is needed, return the original number
-  return num;
+    }, 4000);
+  });
 }
-
-// Example usage:
-let result = maximumSwap(2736);
-console.log(result);  // Output: 7236
+function writeFile(data) {
+  console.log(`The ${data} is being written in sample.txt file`);
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let write = true;
+      if (write) {
+        res(console.log("The data is written in sample.txt file"));
+      } else {
+        rej(console.log("The operation was failed was failed"));
+      }
+    }, 2000);
+  });
+}
+function uploadFile(fileName, newUrl) {
+  console.log(`The ${fileName} is started upoloading in the ${newUrl}`);
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let upload = true;
+      if (upload) {
+        res(console.log("The upload is complete"));
+      } else {
+        rej(console.log("The operation was failed was failed"));
+      }
+    }, 3000);
+  });
+}
+downloader("xyz.com")
+  .then((downloadResult) => {
+    return writeFile("Sample Data");
+  })
+  .then((writeResult) => {
+    return uploadFile("sample.txt", "abc.com");
+  });

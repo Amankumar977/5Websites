@@ -39,7 +39,7 @@ userSchema.methods = {
   jwtToken() {
     return JWT.sign(
       {
-        id: this._id,
+        userId: this._id,
         username: this.username,
       },
       process.env.SECRET,
