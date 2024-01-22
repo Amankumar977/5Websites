@@ -222,7 +222,7 @@ export async function generateOTP(req, res) {
     upperCaseAlphabets: false,
     specialChars: false,
   });
-  res.status(201).send({ code: req.app.locals.OTP });
+  res.status(200).send({ code: req.app.locals.OTP });
 }
 /** Get: http://localhost:5000/api/verifyOTP*/
 export async function verifyOTP(req, res) {

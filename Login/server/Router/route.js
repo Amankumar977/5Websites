@@ -18,12 +18,12 @@ import { registerMail } from "../controller/mailer.js";
 /** Post Method */
 router.route("/register").post(register);
 router.route("/registerMail").post(registerMail);
-router.route("/authenticate").post((req, res) => res.end(""));
-router.route("/login").post(verifyUser, login);
+router.route("/authenticate").post(verifyUser, (req, res) => res.end());
+router.route("/login").post(login);
 /** Get Method */
 router.route("/user/:username").get(getUser);
 router.route("/generateOTP").get(verifyUser, localVariables, generateOTP);
-router.route("/verifyOTP").get(verifyOTP);
+router.route("/verifyOTP").get(verifyUser, verifyOTP);
 router.route("/createResetSession").get(createResetSession);
 /** Put Method */
 router.route("/updateuser").put(Auth, updateUser);

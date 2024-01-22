@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../assets/profile.png";
 import styles from "../styles/Username.module.css";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import { useFormik } from "formik";
 import { registervalidate } from "../helper/validate";
 import convertToBase64 from "../helper/convert";
+import { registerUser } from "../helper/helper";
+import { useNavigate } from "react-router-dom";
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [icon, setIcon] = useState("🙈");
   const [file, setFile] = useState("");
+  const navigate = useNavigate();
   let handleTogglePassword = () => {
     setShowPassword((prePassword) => !prePassword);
     setIcon(() => (showPassword ? "🙈" : "🙊"));
@@ -25,7 +28,18 @@ function Register() {
     validateOnChange: false,
     onSubmit: async (values) => {
       values = Object.assign(values, { profile: file || "" });
-      console.log(values);
+      let registerPromise = registerUser(values);
+      toast.promise(registerPromise, {
+        loading: "creating Profile Please Wait....",
+        success: <b> Registered Successfully....!</b>,
+        error: <b> Unable to register</b>,
+      });
+      registerPromise.then(
+        () =>
+          function () {
+            navigate("/");
+          }
+      );
     },
   });
   const onUpload = async (e) => {
