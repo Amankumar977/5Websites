@@ -49,7 +49,7 @@ function Password() {
   let navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      password: "Aman@12",
+      password: "",
     },
     validate: passwordValidate,
     validateOnBlur: false,
