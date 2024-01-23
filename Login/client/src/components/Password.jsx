@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import avatar from "../assets/profile.png";
 import styles from "../styles/Username.module.css";
@@ -6,19 +6,50 @@ import { Toaster, toast } from "react-hot-toast";
 import { useFormik } from "formik";
 import { passwordValidate } from "../helper/validate";
 import { useAuthStore } from "../store/store";
-import useFetch from "../hooks/fetch.hook";
 import { verifyPassowrd } from "../helper/helper";
+import axios from "axios";
 function Password() {
   const [showPassword, setShowPassword] = useState(false);
   const [eyeIcon, setEyeIcon] = useState("🙈");
   const { username } = useAuthStore((state) => state.auth);
-  const { isLoading, apiData, serverError, status } = useFetch(
-    `user/${username}`
-  );
+  const [getData, setData] = useState({
+    isLoading: false,
+    apiData: undefined,
+    serverError: null,
+    status: null,
+  });
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        if (username) {
+          setData((prev) => ({ ...prev, isLoading: true }));
+          const { data, status } = await axios.get(
+            `${import.meta.env.VITE_SERVER_DOMAIN}/api/user/${username}`
+          );
+          if (status == 200) {
+            setData((prev) => ({
+              ...prev,
+              isLoading: false,
+              apiData: data,
+              status: status,
+            }));
+          }
+        }
+      } catch (error) {
+        setData((prev) => ({
+          ...prev,
+          isLoading: false,
+          serverError: error,
+        }));
+      }
+    }
+    fetchData();
+  }, []);
+
   let navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      password: "",
+      password: "Aman@12",
     },
     validate: passwordValidate,
     validateOnBlur: false,
@@ -30,24 +61,24 @@ function Password() {
       });
       toast.promise(loginpassword, {
         loading: "Checking the password",
-        success: <b> Registered Successfully....!</b>,
+        success: <b> Logged In succesfull....!</b>,
         error: <b> Password doesn't match</b>,
       });
       loginpassword.then((res) => {
-        let { token } = res.data;
+        let token = res.data.token;
         localStorage.setItem("token", token);
         navigate("/profile");
       });
     },
   });
-  if (isLoading) {
+  if (getData.isLoading) {
     return <h1 className="text-2xl text-bold"> Loading please wait... </h1>;
   }
-  if (serverError) {
+  if (getData.serverError) {
     return (
       <h1 className="text-2xl text-bold text-red-600">
         {" "}
-        {serverError.message}
+        {getData.serverError.message}
       </h1>
     );
   }
@@ -63,7 +94,10 @@ function Password() {
         <div className={styles.glass}>
           <div className="title flex flex-col items-center ">
             <h4 className="text-5xl font-bold">
-              Hello {apiData?.firstName || apiData?.username || "Again!"}
+              Hello{" "}
+              {getData.apiData?.firstName ||
+                getData.apiData?.username ||
+                "Again!"}
             </h4>
             <span className="w-2/3 text-gray-400 py-4 text-center">
               Explore More by contacting with us!
@@ -72,7 +106,7 @@ function Password() {
           <form className="py-1" onSubmit={formik.handleSubmit}>
             <div className="profile flex justify-center py-4">
               <img
-                src={apiData?.profile || avatar}
+                src={getData.apiData?.profile || avatar}
                 alt="avatar"
                 className={styles.profile_img}
               />

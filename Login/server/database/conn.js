@@ -1,10 +1,12 @@
-import mongoose, { get } from "mongoose";
-import { MongoMemoryServer } from "mongodb-memory-server";
+import mongoose from "mongoose";
 async function connect() {
-  const mongod = await MongoMemoryServer.create();
-  const getUri = mongod.getUri();
-  const db = await mongoose.connect(getUri);
-  console.log("Database Connected");
-  return db;
+  mongoose
+    .connect(process.env.MONGO_URL)
+    .then(() => {
+      console.log("MOngo Db Connected");
+    })
+    .catch((error) => {
+      console.log("There is a error in cretaing the DB", error.message);
+    });
 }
 export default connect;

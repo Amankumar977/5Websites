@@ -9,6 +9,8 @@ import {
   Username,
   Register,
 } from "./components/index";
+// Authorization middleware
+import { AuthorizeUser, ProtectRoute } from "./middleware/Auth";
 // React Routes
 let router = createBrowserRouter([
   {
@@ -21,7 +23,11 @@ let router = createBrowserRouter([
   },
   {
     path: "/profile",
-    element: <Profile />,
+    element: (
+      <AuthorizeUser>
+        <Profile />
+      </AuthorizeUser>
+    ),
   },
   {
     path: "/recovery",
@@ -33,7 +39,11 @@ let router = createBrowserRouter([
   },
   {
     path: "/password",
-    element: <Password />,
+    element: (
+      <ProtectRoute>
+        <Password />
+      </ProtectRoute>
+    ),
   },
   {
     path: "*",

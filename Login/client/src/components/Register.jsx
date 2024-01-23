@@ -34,12 +34,7 @@ function Register() {
         success: <b> Registered Successfully....!</b>,
         error: <b> Unable to register</b>,
       });
-      registerPromise.then(
-        () =>
-          function () {
-            navigate("/");
-          }
-      );
+      registerPromise.then(() => navigate("/"));
     },
   });
   const onUpload = async (e) => {

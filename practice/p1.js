@@ -1,21 +1,31 @@
-var maxArea = function (height) {
-  let left = 0;
-  let right = height.length - 1;
-  let maxContArea = 0;
-  while (left < right) {
-    let widthOfCon = right - left;
-    let heightOfCon = 0;
-    if (height[left] < height[right]) {
-      heightOfCon = height[left];
-      left++;
+function TreeNode(val, left, right) {
+  this.val = val === undefined ? 0 : val;
+  this.left = left === undefined ? null : left;
+  this.right = right === undefined ? null : right;
+}
+
+function inorderTraversal(root) {
+  const stack = [];
+  const res = [];
+
+  while (root || stack.length) {
+    if (root) {
+      stack.push(root);
+      root = root.left;
     } else {
-      heightOfCon = height[right];
-      right--;
+      root = stack.pop();
+      res.push(root.val);
+      root = root.right;
     }
-    let currContArea = widthOfCon * heightOfCon;
-    maxContArea = Math.max(currContArea, maxContArea);
   }
-  return maxContArea;
-};
-let height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
-console.log(maxArea(height));
+
+  return res;
+}
+
+// Create a proper binary tree
+let root = new TreeNode(1);
+root.left = null;
+root.right = new TreeNode(2);
+root.right.left = new TreeNode(3);
+
+console.log("In-order Traversal:", inorderTraversal(root));

@@ -10,39 +10,47 @@ export default function useFetch(query) {
     serverError: null,
   });
 
+  if (!query) {
+    return;
+  }
+
   useEffect(() => {
-    if (!query) {
-      return;
-    }
+    let isMounted = true;
 
     const fetchData = async () => {
       try {
-        setData((prev) => ({ ...prev, isLoading: true }));
-        const { data, status } = await axios.get(`/api/${query}`);
-        if (status === 200) {
-          console.log(getData);
+        if (isMounted) {
+          setData((prev) => ({ ...prev, isLoading: true }));
+
+          const { data, status } = await axios.get(`/api/${query}`);
+
+          if (status === 200) {
+            setData((prev) => ({
+              ...prev,
+              apiData: data, // Set apiData only when the status is 200
+              status: status,
+              isLoading: false,
+            }));
+          }
+        }
+        console.log(getData);
+      } catch (error) {
+        if (isMounted) {
           setData((prev) => ({
             ...prev,
-            apiData: data,
-            status: status,
             isLoading: false,
+            serverError: error,
           }));
         }
-        console.log(getData.apiData);
-      } catch (error) {
-        setData((prev) => ({
-          ...prev,
-          isLoading: false,
-          serverError: error,
-        }));
       }
     };
 
     fetchData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [query]);
-  useEffect(() => {
-    console.log("After the state update");
-    console.log(getData);
-  }, [getData]);
+
   return [getData, setData];
 }
