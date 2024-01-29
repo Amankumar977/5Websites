@@ -4,28 +4,24 @@ function TreeNode(val, left, right) {
   this.right = right === undefined ? null : right;
 }
 
-function inorderTraversal(root) {
-  const stack = [];
-  const res = [];
+let root = new TreeNode(5);
+root.left = new TreeNode(2); // Create a new TreeNode for the left child
+root.right = new TreeNode(6); // Create a new TreeNode for the right child
 
-  while (root || stack.length) {
-    if (root) {
-      stack.push(root);
-      root = root.left;
-    } else {
-      root = stack.pop();
-      res.push(root.val);
-      root = root.right;
-    }
+let isNotABst = false;
+let prevNodeValue = 0;
+
+var isValidBST = function (root) {
+  if (root == null) {
+    return true;
   }
+  isValidBST(root.left);
+  if (prevNodeValue >= root.val) {
+    isNotABst = true;
+  }
+  prevNodeValue = root.val;
+  isValidBST(root.right);
+  return !isNotABst;
+};
 
-  return res;
-}
-
-// Create a proper binary tree
-let root = new TreeNode(1);
-root.left = null;
-root.right = new TreeNode(2);
-root.right.left = new TreeNode(3);
-
-console.log("In-order Traversal:", inorderTraversal(root));
+console.log(isValidBST(root));
