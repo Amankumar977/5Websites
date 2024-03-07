@@ -2,7 +2,7 @@ package practiceset;
 
 import java.util.*;
 
-public class p {
+public class Trees {
 
 	public static void main(String[] args) {
 		int arr[] = { 78, 89, 45, 63, 78, 56};
